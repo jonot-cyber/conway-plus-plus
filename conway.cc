@@ -80,13 +80,11 @@ int main() {
     auto front = Board<180, 40>();
     auto back = Board<180, 40>();
     front.randomize();
-    int count = 0;
-    while (count < 1'000) {
+    while (true) {
         std::cout << "\x1b[2J";
         front.display();
         front.iterate(back);
         front = back;
-        //usleep(10'000);
-        ++count;
+        usleep(10'000);
     }
 }
