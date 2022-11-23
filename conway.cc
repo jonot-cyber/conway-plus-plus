@@ -49,7 +49,7 @@ public:
                 int neighbors = 0;
                 for (int y2 = y - 1; y2 <= y + 1; ++y2) {
                     for (int x2 = x - 1; x2 <= x + 1; ++x2) {
-                        if (x == x2 && y == y2) { [[unlikely]]
+                        if (x == x2 && y == y2) { 
                             continue;
                         }
                         if (isAlive(x2, y2)) {
@@ -65,7 +65,7 @@ public:
     bool equals(Board<W, H> const& other) const {
         for (int y = 0; y < H; ++y) {
             for (int x = 0; x < W; ++x) {
-                if (data.at(y).at(x) != other.data.at(y).at(x)) { [[likely]]
+                if (data.at(y).at(x) != other.data.at(y).at(x)) {
                     return false;
                 }
             }
